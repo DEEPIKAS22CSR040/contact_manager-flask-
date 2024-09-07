@@ -1,0 +1,15 @@
+<html>
+  <body>
+    {% if contact %}
+      <form action="{{ url_for('edit', id=contact.id) }}" method="POST">
+        <input type="text" name="name" value="{{ contact.name }}" placeholder="Enter Name"><br><br>
+        <input type="email" name="email" value="{{ contact.email }}" placeholder="Enter Email"><br><br>
+        <input type="text" name="phone" value="{{ contact.phone }}" placeholder="Enter Phone Number"><br><br>
+        <input type="text" name="address" value="{{ contact.address }}" placeholder="Enter Address"><br><br>
+        <input type="submit" value="Update">
+      </form>
+    {% else %}
+      <p>Contact not found. Please try again or check the ID.</p>
+    {% endif %}
+  </body>
+</html>

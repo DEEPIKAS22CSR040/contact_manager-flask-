@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      {% for contact in contacts %}
+      <tr>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.phone }}</td>
+        <td>{{ contact.address }}</td>
+        <td>
+          <a href="{{ url_for('edit', id=contact.id) }}">Edit</a>
+      
+        </td>
+        <td>
+          <a href="{{ url_for('delete', id=contact.id) }}">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
